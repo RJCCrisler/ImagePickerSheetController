@@ -352,6 +352,14 @@ public class ImagePickerSheetController: UIViewController {
         }, completion: completion)
     }
     
+    public func resetSelection() {
+        for index in selectedImageIndices {
+            self.previewCollectionView.deselectItemAtIndexPath(NSIndexPath(forRow: 0, inSection: index), animated: false)
+            supplementaryViews[index]?.selected = false
+        }
+        selectedImageIndices = []
+        sheetController.reloadActionItems()
+    }
 }
 
 // MARK: - UICollectionViewDataSource
