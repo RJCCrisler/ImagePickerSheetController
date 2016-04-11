@@ -11,6 +11,7 @@ import Foundation
 public enum ImagePickerActionStyle {
     case Default
     case Cancel
+    case Clear
 }
 
 public class ImagePickerAction {
